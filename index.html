@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOPRANO — Тату студия и академия · Новосибирск</title>
+<meta name="description" content="Профессиональная тату студия и академия в Новосибирске. Тату, пирсинг, коворкинг, обучение.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#000000;
+  --gold-dark:#A8793F;
+  --gold:#CDA76F;
+  --gold-light:#ECD9B2;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth;}
+body{background:#000;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#000;}
+::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
+
+/* ── HEADER ── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:70px;padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(205,167,111,0.15);
+  transition:background 0.3s;
+}
+.logo-wrap{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.logo-mark{
+  width:46px;height:46px;border:1px solid rgba(205,167,111,0.4);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
+  color:var(--gold-light);letter-spacing:0.05em;
+}
+.logo-text-wrap{display:flex;flex-direction:column;line-height:1;}
+.logo-main{
+  font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;
+  background:linear-gradient(135deg,#A8793F,#ECD9B2,#A8793F);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.logo-sub{font-size:7px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:3px;}
+
+nav{display:flex;gap:28px;align-items:center;position:absolute;left:50%;transform:translateX(-50%);}
+nav a{
+  font-size:11px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.25s;
+  position:relative;white-space:nowrap;
+}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+nav a:hover{color:var(--gold-light);}
+nav a:hover::after{width:100%;}
+
+.hdr-right{display:flex;align-items:center;gap:16px;}
+.hdr-phone{font-size:13px;font-weight:500;color:var(--gold-light);text-decoration:none;letter-spacing:0.04em;white-space:nowrap;transition:color 0.25s;}
+.hdr-phone:hover{color:#fff;}
+.hdr-socials{display:flex;gap:10px;align-items:center;}
+.hdr-socials a{color:rgba(255,255,255,0.4);transition:color 0.25s,transform 0.25s;display:flex;align-items:center;}
+.hdr-socials a:hover{color:var(--gold);transform:scale(1.18);}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.burger span{display:block;width:24px;height:2px;background:var(--gold-light);border-radius:2px;transition:all 0.3s;}
+.burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.active span:nth-child(2){opacity:0;}
+.burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+.mob-nav{
+  display:none;position:fixed;top:70px;left:0;right:0;z-index:199;
+  background:rgba(0,0,0,0.97);backdrop-filter:blur(20px);
+  padding:24px;flex-direction:column;border-bottom:1px solid rgba(205,167,111,0.12);
+}
+.mob-nav.open{display:flex;}
+.mob-nav a{
+  font-size:15px;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.65);text-decoration:none;
+  padding:14px 0;border-bottom:1px solid rgba(205,167,111,0.08);transition:color 0.25s;
+}
+.mob-nav a:last-child{border-bottom:none;color:var(--gold-light);}
+.mob-nav a:hover{color:var(--gold-light);}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;padding-top:70px;
+  display:flex;align-items:center;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(135deg,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.7) 50%,rgba(0,0,0,0.85) 100%),
+    radial-gradient(ellipse 80% 80% at 70% 50%,rgba(168,121,63,0.12) 0%,transparent 70%);
+  z-index:1;
+}
+.hero-pattern{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(205,167,111,0.03) 60px,rgba(205,167,111,0.03) 61px),
+    repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(205,167,111,0.03) 60px,rgba(205,167,111,0.03) 61px);
+}
+.hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:80px 60px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 18px;border:1px solid rgba(205,167,111,0.3);
+  font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:32px;
+  animation:fadeUp 0.7s ease 0.2s both;
+}
+.hero-badge::before{content:'';width:20px;height:1px;background:var(--gold);}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,8vw,110px);
+  font-weight:300;line-height:0.92;
+  color:#fff;margin-bottom:8px;
+  animation:fadeUp 0.7s ease 0.35s both;
+}
+.hero-title em{
+  font-style:italic;display:block;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-title-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,2.5vw,32px);font-weight:300;
+  color:rgba(255,255,255,0.4);letter-spacing:0.25em;text-transform:uppercase;
+  margin-bottom:40px;
+  animation:fadeUp 0.7s ease 0.45s both;
+}
+.hero-desc{
+  font-size:14px;line-height:1.8;color:rgba(255,255,255,0.5);
+  max-width:480px;margin-bottom:52px;
+  animation:fadeUp 0.7s ease 0.55s both;
+}
+.hero-btns{
+  display:flex;gap:16px;flex-wrap:wrap;
+  animation:fadeUp 0.7s ease 0.65s both;
+}
+.btn-gold{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:15px 36px;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold));
+  color:#000;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.btn-gold::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold),var(--gold-light));
+  opacity:0;transition:opacity 0.3s;
+}
+.btn-gold:hover::before{opacity:1;}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(205,167,111,0.4);}
+.btn-gold span,.btn-gold svg{position:relative;z-index:1;}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:14px 36px;border:1px solid rgba(205,167,111,0.5);
+  color:var(--gold-light);font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;background:transparent;cursor:pointer;
+  transition:all 0.3s;
+}
+.btn-ghost:hover{background:rgba(205,167,111,0.08);border-color:var(--gold-light);transform:translateY(-2px);}
+
+.hero-stats{
+  position:absolute;right:60px;bottom:80px;z-index:2;
+  display:flex;flex-direction:column;gap:32px;
+  animation:fadeIn 0.8s ease 1s both;
+}
+.hero-stat{text-align:right;}
+.hero-stat-num{
+  font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;line-height:1;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-stat-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+.scroll-hint{
+  position:absolute;bottom:32px;left:60px;z-index:2;
+  display:flex;align-items:center;gap:12px;
+  animation:fadeIn 0.7s ease 1.4s both;
+}
+.scroll-line{width:44px;height:1px;background:rgba(205,167,111,0.4);}
+.scroll-text{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+
+/* ── SECTION BASE ── */
+.section{padding:100px 60px;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.sec-label{
+  font-size:10px;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:14px;
+}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold);}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,5vw,64px);font-weight:300;line-height:1.05;
+  color:#fff;margin-bottom:56px;
+}
+.sec-title em{font-style:italic;color:var(--gold-light);}
+
+/* ── WHO WE ARE ── */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(205,167,111,0.18);margin-bottom:80px;}
+.who-col{padding:52px;}
+.who-col:first-child{border-right:1px solid rgba(205,167,111,0.18);}
+.who-col-tag{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+.who-col h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:#fff;margin-bottom:16px;line-height:1.25;}
+.who-col p{font-size:14px;line-height:1.85;color:rgba(255,255,255,0.5);margin-bottom:14px;}
+.who-col p:last-child{margin-bottom:0;}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(205,167,111,0.15);border:1px solid rgba(205,167,111,0.18);}
+.svc-card{
+  background:#000;padding:44px 36px;
+  position:relative;overflow:hidden;cursor:default;
+  transition:background 0.3s;
+}
+.svc-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform 0.4s;
+}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-card:hover{background:#080808;}
+.svc-num{font-size:10px;letter-spacing:0.2em;color:var(--gold-dark);margin-bottom:24px;font-family:'Cormorant Garamond',serif;}
+.svc-icon{
+  width:46px;height:46px;border:1px solid rgba(205,167,111,0.3);
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  transition:border-color 0.3s;
+}
+.svc-card:hover .svc-icon{border-color:var(--gold);}
+.svc-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:#fff;margin-bottom:12px;}
+.svc-desc{font-size:13px;line-height:1.75;color:rgba(255,255,255,0.42);}
+.svc-img{
+  width:100%;aspect-ratio:4/3;background:#0c0c0c;
+  border:1px solid rgba(205,167,111,0.1);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;margin-top:20px;
+}
+.svc-img svg{width:28px;height:28px;stroke:rgba(205,167,111,0.25);fill:none;stroke-width:1.2;}
+.svc-img span{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(205,167,111,0.25);}
+
+/* ── STATS ── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid rgba(205,167,111,0.18);margin-top:72px;
+}
+.stat-item{
+  padding:44px;text-align:center;
+  border-right:1px solid rgba(205,167,111,0.18);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:10px;
+}
+.stat-lbl{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+
+/* ── MASTERS ── */
+.masters-bg{background:#050505;}
+.masters-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(205,167,111,0.15);}
+.master-card{
+  background:#050505;padding:48px;
+  display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:start;
+  transition:background 0.3s;
+}
+.master-card:hover{background:#080808;}
+.master-photo{
+  width:160px;height:200px;background:#0d0d0d;
+  border:1px solid rgba(205,167,111,0.2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;overflow:hidden;
+}
+.master-photo img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(20%);}
+.master-photo-ph svg{width:32px;height:32px;stroke:rgba(205,167,111,0.2);fill:none;stroke-width:1.2;}
+.master-photo-ph span{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(205,167,111,0.2);text-align:center;padding:0 8px;}
+.master-info{padding-top:4px;}
+.master-num{font-size:10px;letter-spacing:0.2em;color:var(--gold-dark);margin-bottom:14px;}
+.master-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#fff;margin-bottom:8px;}
+.master-style{
+  display:inline-block;padding:4px 14px;
+  border:1px solid rgba(205,167,111,0.35);
+  font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:18px;
+}
+.master-bio{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.42);}
+
+/* ── PORTFOLIO ── */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto;
+  gap:4px;
+}
+.port-item{
+  background:#0c0c0c;
+  border:1px solid rgba(205,167,111,0.08);
+  aspect-ratio:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  transition:border-color 0.3s;cursor:pointer;
+  overflow:hidden;position:relative;
+}
+.port-item:hover{border-color:rgba(205,167,111,0.3);}
+.port-item.large{grid-column:span 2;aspect-ratio:2/1;}
+.port-item svg{width:28px;height:28px;stroke:rgba(205,167,111,0.2);fill:none;stroke-width:1.2;}
+.port-item span{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(205,167,111,0.2);}
+.port-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;filter:grayscale(15%);}
+.port-item:hover img{transform:scale(1.04);}
+.port-overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,0);
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s;
+}
+.port-item:hover .port-overlay{background:rgba(0,0,0,0.35);}
+.port-overlay-text{
+  opacity:0;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-light);
+  transition:opacity 0.3s;
+}
+.port-item:hover .port-overlay-text{opacity:1;}
+.portfolio-more{
+  display:flex;justify-content:center;margin-top:48px;
+}
+
+/* ── DIRECTOR ── */
+.director-wrap{
+  display:grid;grid-template-columns:420px 1fr;gap:0;
+  border:1px solid rgba(205,167,111,0.18);min-height:600px;
+}
+.dir-photo-col{position:relative;overflow:hidden;}
+.dir-photo-col img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(10%);}
+.dir-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 60%,#000 100%),
+              linear-gradient(0deg,rgba(0,0,0,0.4) 0%,transparent 50%);
+}
+.dir-badge{
+  position:absolute;bottom:32px;left:32px;
+  padding:8px 18px;background:rgba(0,0,0,0.75);
+  border:1px solid rgba(205,167,111,0.3);
+  font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);
+}
+.dir-content{padding:56px 56px 56px 52px;display:flex;flex-direction:column;justify-content:center;}
+.dir-tag{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.dir-name{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:#fff;line-height:1.05;margin-bottom:8px;}
+.dir-title{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:36px;}
+.dir-quote{
+  position:relative;padding:0 0 0 24px;
+  border-left:2px solid var(--gold);
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:18px;line-height:1.65;color:rgba(255,255,255,0.75);
+  margin-bottom:36px;
+}
+.dir-bio{font-size:13px;line-height:1.85;color:rgba(255,255,255,0.45);}
+.dir-bio strong{color:var(--gold-light);font-weight:500;}
+.dir-facts{display:flex;gap:32px;margin-top:32px;padding-top:32px;border-top:1px solid rgba(205,167,111,0.15);}
+.dir-fact-num{
+  font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.dir-fact-lbl{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px;}
+
+/* ── REVIEWS ── */
+.reviews-bg{background:#030303;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(205,167,111,0.12);}
+.review-card{background:#030303;padding:40px 36px;}
+.review-stars{display:flex;gap:4px;margin-bottom:20px;}
+.review-star{color:var(--gold);font-size:14px;}
+.review-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.55);margin-bottom:24px;font-style:italic;}
+.review-author{display:flex;align-items:center;gap:12px;}
+.review-avatar{
+  width:36px;height:36px;border-radius:50%;background:rgba(205,167,111,0.15);
+  border:1px solid rgba(205,167,111,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:500;color:var(--gold);
+  flex-shrink:0;
+}
+.review-name{font-size:13px;font-weight:500;color:rgba(255,255,255,0.7);}
+.review-date{font-size:11px;color:rgba(255,255,255,0.3);}
+
+/* ── CONTACT FORM ── */
+.contact-wrap{
+  display:grid;grid-template-columns:1fr 480px;gap:0;
+  border:1px solid rgba(205,167,111,0.18);
+}
+.contact-left{padding:72px 60px;position:relative;overflow:hidden;}
+.contact-left::before{
+  content:'';position:absolute;top:-100px;left:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(168,121,63,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.contact-left .sec-title{margin-bottom:20px;}
+.contact-tagline{font-size:14px;line-height:1.8;color:rgba(255,255,255,0.45);margin-bottom:40px;max-width:380px;}
+.contact-info{display:flex;flex-direction:column;gap:20px;}
+.contact-item{display:flex;align-items:flex-start;gap:16px;}
+.contact-item-icon{
+  width:38px;height:38px;border:1px solid rgba(205,167,111,0.3);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.contact-item-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+.contact-item-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:4px;}
+.contact-item-val{font-size:14px;color:rgba(255,255,255,0.7);}
+.contact-item-val a{color:var(--gold-light);text-decoration:none;}
+.contact-item-val a:hover{color:#fff;}
+
+.contact-form{background:#060606;padding:60px 48px;border-left:1px solid rgba(205,167,111,0.18);}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:#fff;margin-bottom:6px;}
+.form-sub{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:36px;}
+.form-group{margin-bottom:18px;}
+.form-group input,.form-group textarea,.form-group select{
+  width:100%;background:#0a0a0a;border:1px solid rgba(205,167,111,0.2);
+  color:#fff;font-family:'Inter',sans-serif;font-size:13px;
+  padding:14px 18px;outline:none;
+  transition:border-color 0.25s;resize:none;
+  -webkit-appearance:none;appearance:none;
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.25);}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:rgba(205,167,111,0.5);}
+.form-group textarea{height:100px;}
+.form-group select{color:rgba(255,255,255,0.25);cursor:pointer;}
+.form-group select option{background:#0a0a0a;color:#fff;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.form-submit{width:100%;margin-top:8px;}
+.form-note{font-size:11px;color:rgba(255,255,255,0.2);margin-top:14px;line-height:1.6;}
+
+/* ── FAQ ── */
+.faq-bg{background:#020202;}
+.faq-list{display:flex;flex-direction:column;gap:0;border:1px solid rgba(205,167,111,0.15);}
+.faq-item{border-bottom:1px solid rgba(205,167,111,0.12);}
+.faq-item:last-child{border-bottom:none;}
+.faq-question{
+  width:100%;background:none;border:none;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 32px;cursor:pointer;text-align:left;gap:16px;
+  transition:background 0.25s;
+}
+.faq-question:hover{background:rgba(205,167,111,0.04);}
+.faq-q-text{font-size:15px;letter-spacing:0.04em;color:rgba(255,255,255,0.75);}
+.faq-icon{
+  width:28px;height:28px;border:1px solid rgba(205,167,111,0.3);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--gold);font-size:18px;transition:transform 0.3s,border-color 0.3s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--gold);}
+.faq-answer{
+  max-height:0;overflow:hidden;transition:max-height 0.4s ease;
+}
+.faq-item.open .faq-answer{max-height:600px;}
+.faq-answer-inner{
+  padding:0 32px 28px;
+  font-size:14px;line-height:1.85;color:rgba(255,255,255,0.45);
+}
+
+/* ── FOOTER ── */
+footer{background:#000;border-top:1px solid rgba(205,167,111,0.15);}
+.footer-top{
+  max-width:1200px;margin:0 auto;padding:64px 60px 48px;
+  display:grid;grid-template-columns:220px 1fr 1fr 200px;gap:48px;
+}
+.footer-logo{margin-bottom:20px;}
+.footer-logo .logo-main{font-size:24px;}
+.footer-desc{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.35);margin-bottom:20px;}
+.footer-soc{display:flex;gap:10px;}
+.footer-soc a{
+  width:34px;height:34px;border:1px solid rgba(205,167,111,0.25);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,0.35);transition:all 0.25s;
+}
+.footer-soc a:hover{border-color:var(--gold);color:var(--gold);}
+.footer-soc a svg{width:16px;height:16px;fill:currentColor;}
+.footer-col h4{
+  font-size:10px;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;
+}
+.footer-col a,.footer-col p{
+  display:block;font-size:13px;color:rgba(255,255,255,0.35);
+  text-decoration:none;margin-bottom:10px;line-height:1.6;
+  transition:color 0.25s;
+}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-addr{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.35);}
+.footer-bot{
+  max-width:1200px;margin:0 auto;padding:20px 60px;
+  border-top:1px solid rgba(205,167,111,0.08);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.2);}
+.footer-gold-line{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold));
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  header{padding:0 20px;height:64px;}
+  nav{display:none;}
+  .burger{display:flex;}
+  .hdr-right .hdr-phone{display:none;}
+  .hdr-socials{display:none;}
+  .mob-nav{top:64px;}
+  
+  .hero-content{padding:60px 24px;}
+  .hero-stats{right:24px;bottom:60px;}
+  .hero-stat-num{font-size:32px;}
+  .scroll-hint{left:24px;}
+  .hero-btns{flex-direction:column;max-width:280px;}
+  
+  .section{padding:72px 24px;}
+  .who-grid{grid-template-columns:1fr;}
+  .who-col:first-child{border-right:none;border-bottom:1px solid rgba(205,167,111,0.18);}
+  .who-col{padding:36px 28px;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .stats-row{grid-template-columns:1fr;}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(205,167,111,0.18);}
+  .stat-item:last-child{border-bottom:none;}
+  
+  .masters-grid{grid-template-columns:1fr;}
+  .master-card{grid-template-columns:120px 1fr;gap:20px;padding:32px 24px;}
+  .master-photo{width:120px;height:150px;}
+  
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+  .port-item.large{grid-column:span 1;aspect-ratio:1;}
+  
+  .director-wrap{grid-template-columns:1fr;}
+  .dir-photo-col{height:360px;}
+  .dir-content{padding:40px 28px;}
+  .dir-name{font-size:34px;}
+  .dir-facts{flex-wrap:wrap;gap:20px;}
+  
+  .reviews-grid{grid-template-columns:1fr;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .contact-form{border-left:none;border-top:1px solid rgba(205,167,111,0.18);}
+  .contact-left{padding:48px 28px;}
+  .form-row{grid-template-columns:1fr;}
+  
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;}
+  .footer-bot{flex-direction:column;gap:12px;text-align:center;padding:20px 24px;}
+}
+@media(max-width:540px){
+  .services-grid{grid-template-columns:1fr;}
+  .hero-stats{display:none;}
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <a href="#" class="logo-wrap">
+    <div class="logo-mark">S</div>
+    <div class="logo-text-wrap">
+      <span class="logo-main">Soprano</span>
+      <span class="logo-sub">Tattoo Studio Academy</span>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#about">О нас</a>
+    <a href="#services">Услуги</a>
+    <a href="#masters">Мастера</a>
+    <a href="#portfolio">Портфолио</a>
+    <a href="#director">Руководитель</a>
+    <a href="#contact">Запись</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="hdr-right">
+    <a href="tel:+79513813077" class="hdr-phone">+7 951 381-30-77</a>
+    <div class="hdr-socials">
+      <a href="https://t.me/Soprano2024" target="_blank" title="Telegram">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.81-1.68 7.92c-.12.56-.45.7-.9.43l-2.5-1.84-1.2 1.16c-.14.13-.25.24-.5.24l.18-2.54 4.6-4.16c.2-.18-.04-.28-.31-.1L7.58 14.33l-2.47-.77c-.54-.17-.55-.54.11-.8l9.65-3.72c.45-.17.84.11.69.77z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/soprano.tattoo.nsk" target="_blank" title="Instagram">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://vk.ru/soprano_tattoo" target="_blank" title="ВКонтакте">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.87 13.5h-1.47c-.56 0-.73-.45-1.73-1.45-.87-.85-1.25-.97-1.46-.97-.3 0-.38.08-.38.47v1.32c0 .34-.11.54-1 .54-1.47 0-3.1-.89-4.25-2.55-1.73-2.43-2.2-4.24-2.2-4.62 0-.2.08-.4.47-.4h1.47c.35 0 .48.16.62.55.68 1.95 1.82 3.66 2.29 3.66.18 0 .26-.08.26-.53V9.86c-.06-1-.57-1.08-.57-1.43 0-.17.14-.34.36-.34h2.32c.3 0 .4.16.4.5v2.7c0 .3.13.4.21.4.18 0 .33-.1.66-.43 1.02-1.14 1.75-2.9 1.75-2.9.1-.2.26-.38.6-.38h1.47c.44 0 .54.23.44.53-.18.84-1.95 3.33-1.95 3.33-.15.25-.2.36 0 .63.15.2.64.62.97 1 .6.65 1.06 1.2 1.18 1.58.13.38-.07.57-.46.57z"/></svg>
+      </a>
+    </div>
+    <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav -->
+<div class="mob-nav" id="mobNav">
+  <a href="#about" onclick="closeMenu()">О нас</a>
+  <a href="#services" onclick="closeMenu()">Услуги</a>
+  <a href="#masters" onclick="closeMenu()">Мастера</a>
+  <a href="#portfolio" onclick="closeMenu()">Портфолио</a>
+  <a href="#director" onclick="closeMenu()">Руководитель</a>
+  <a href="#contact" onclick="closeMenu()">Запись</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="tel:+79513813077">+7 951 381-30-77</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Новосибирск · Тату студия & Академия</div>
+
+    <h1 class="hero-title">
+      Тату<br><em>Soprano</em>
+    </h1>
+    <p class="hero-title-sub">Studio &amp; Academy</p>
+
+    <p class="hero-desc">
+      Профессиональная тату студия нового поколения. Авторские эскизы, 
+      мастера с опытом более 15 лет, стерильность 100%.
+    </p>
+
+    <div class="hero-btns">
+      <a href="https://t.me/Soprano2024" target="_blank" class="btn-gold">
+        <span>Записаться</span>
+        <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#about" class="btn-ghost">
+        <span>Узнать больше</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">2+</div>
+      <div class="hero-stat-label">Года работы</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2000+</div>
+      <div class="hero-stat-label">Тату сделано</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">15</div>
+      <div class="hero-stat-label">Лет опыта мастеров</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════ О НАС ═══════════ -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <p class="sec-label">О студии</p>
+    <h2 class="sec-title">Кто мы?<br><em>Soprano</em></h2>
+
+    <div class="who-grid">
+      <div class="who-col">
+        <p class="who-col-tag">Soprano Studio</p>
+        <h3>Тату студия нового поколения</h3>
+        <p>Soprano — профессиональная тату студия и академия в Новосибирске. Мы создаём татуировки, которые становятся частью вас: от тонкой линии до масштабного рукава, от строгой графики до яркого реализма.</p>
+        <p>За 2 года работы мы выполнили более 2000 татуировок. Каждый проект — это отдельная история, которую мы воплощаем с полной отдачей.</p>
+        <p>Работаем только с сертифицированными красками и профессиональным оборудованием. Все расходники одноразовые, стерильность — наш приоритет.</p>
+      </div>
+      <div class="who-col">
+        <p class="who-col-tag">Почему Soprano</p>
+        <h3>100% индивидуальный подход</h3>
+        <p>Каждый проект начинается с бесплатной консультации. Мы обсуждаем идею, стиль, размещение и стоимость — никаких шаблонов, только работа под вас.</p>
+        <p>Наши мастера имеют суммарный опыт более 15 лет. Они постоянно участвуют в фестивалях и совершенствуют своё мастерство.</p>
+        <p style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(205,167,111,0.12);">Помимо студии, мы обучаем новых мастеров в академии Soprano — передаём техники, знания и опыт следующему поколению тату-художников.</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">2+</div>
+        <div class="stat-lbl">Года работы студии</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2000+</div>
+        <div class="stat-lbl">Тату выполнено</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15</div>
+        <div class="stat-lbl">Лет опыта мастеров</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ УСЛУГИ ═══════════ -->
+<section class="section" id="services" style="background:#040404;padding-top:80px;padding-bottom:80px;">
+  <div class="section-inner">
+    <p class="sec-label">Что мы делаем</p>
+    <h2 class="sec-title">Услуги<br><em>студии</em></h2>
+
+    <div class="services-grid">
+      <div class="svc-card">
+        <p class="svc-num">01</p>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3 class="svc-name">Татуировка</h3>
+        <p class="svc-desc">Реализм, графика, граффити, блекворк, акварель и другие стили. Авторский эскиз или воплощение вашей идеи.</p>
+        <div class="svc-img">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Фото скоро</span>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <p class="svc-num">02</p>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <h3 class="svc-name">Пирсинг</h3>
+        <p class="svc-desc">Профессиональный пирсинг любой сложности. Стерильные инструменты, украшения из титана и стали. Консультация включена.</p>
+        <div class="svc-img">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Фото скоро</span>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <p class="svc-num">03</p>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <h3 class="svc-name">Обучение тату</h3>
+        <p class="svc-desc">Академия Soprano: курсы для начинающих и опытных мастеров. Практика с первого дня, индивидуальная программа, сертификат.</p>
+        <div class="svc-img">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Фото скоро</span>
+        </div>
+      </div>
+
+      <div class="svc-card">
+        <p class="svc-num">04</p>
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <h3 class="svc-name">Коворкинг</h3>
+        <p class="svc-desc">Рабочее пространство для тату-мастеров. Всё необходимое оборудование, комфортная атмосфера и профессиональное сообщество.</p>
+        <div class="svc-img">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Фото скоро</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ МАСТЕРА ═══════════ -->
+<section class="section masters-bg" id="masters">
+  <div class="section-inner">
+    <p class="sec-label">Команда</p>
+    <h2 class="sec-title">Наши<br><em>мастера</em></h2>
+
+    <div class="masters-grid">
+      <div class="master-card">
+        <div class="master-photo">
+          <div class="master-photo-ph">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Фото мастера</span>
+          </div>
+        </div>
+        <div class="master-info">
+          <p class="master-num">01</p>
+          <h3 class="master-name">Антон</h3>
+          <span class="master-style">Реализм</span>
+          <p class="master-bio">Специализируется на фотореализме и портретных работах. Каждая татуировка — это точная передача образа с невероятной детализацией. Работает как с чёрно-серыми, так и с цветными работами.</p>
+        </div>
+      </div>
+
+      <div class="master-card">
+        <div class="master-photo">
+          <div class="master-photo-ph">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Фото мастера</span>
+          </div>
+        </div>
+        <div class="master-info">
+          <p class="master-num">02</p>
+          <h3 class="master-name">Иван</h3>
+          <span class="master-style">Графика · Граффити</span>
+          <p class="master-bio">Мастер графических и стрит-арт стилей. Сочетает точность линий с экспрессией граффити-культуры. Создаёт смелые, узнаваемые работы с характером.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-top:48px;">
+      <a href="https://t.me/Soprano2024" target="_blank" class="btn-ghost">
+        <span>Записаться к мастеру</span>
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ПОРТФОЛИО ═══════════ -->
+<section class="section" id="portfolio" style="background:#020202;">
+  <div class="section-inner">
+    <p class="sec-label">Работы</p>
+    <h2 class="sec-title">Портфолио<br><em>студии</em></h2>
+
+    <div class="portfolio-grid">
+      <div class="port-item large">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+      <div class="port-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+      <div class="port-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+      <div class="port-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+      <div class="port-item">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+      <div class="port-item large">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Загрузите фото</span>
+        <div class="port-overlay"><span class="port-overlay-text">Просмотр</span></div>
+      </div>
+    </div>
+
+    <div class="portfolio-more">
+      <a href="https://www.instagram.com/soprano.tattoo.nsk" target="_blank" class="btn-ghost">
+        <span>Больше работ в Instagram</span>
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ РУКОВОДИТЕЛЬ ═══════════ -->
+<section class="section" id="director" style="background:#050505;">
+  <div class="section-inner">
+    <p class="sec-label">Команда</p>
+    <h2 class="sec-title">Руководитель<br><em>студии</em></h2>
+
+    <div class="director-wrap">
+      <div class="dir-photo-col">
+        <img src="data:image/jpeg;base64,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" alt="Драйцев Антон — руководитель Soprano">
+        <div class="dir-photo-overlay"></div>
+        <span class="dir-badge">Основатель Soprano</span>
+      </div>
+      <div class="dir-content">
+        <p class="dir-tag">Руководитель студии</p>
+        <h2 class="dir-name">Драйцев<br>Антон</h2>
+        <p class="dir-title">Тату-мастер · 10 лет опыта</p>
+
+        <blockquote class="dir-quote">
+          «Для меня тату — это прямое высказывание своих мыслей, которые часто сложно передать словами. Поэтому я с большой ответственностью подхожу к эскизу и полной реализации проекта.»
+        </blockquote>
+
+        <p class="dir-bio">
+          <strong>10 лет</strong> в индустрии татуировки. Открыл <strong>2 тату-студии</strong> и <strong>1 академию</strong> тату. 
+          Участник всероссийских и международных тату-фестивалей. 
+          Именно этот принцип — глубокое уважение к идее клиента — лежит в основе работы всей студии и академии Soprano.
+        </p>
+
+        <div class="dir-facts">
+          <div>
+            <div class="dir-fact-num">10</div>
+            <div class="dir-fact-lbl">Лет опыта</div>
+          </div>
+          <div>
+            <div class="dir-fact-num">2</div>
+            <div class="dir-fact-lbl">Студии открыто</div>
+          </div>
+          <div>
+            <div class="dir-fact-num">1</div>
+            <div class="dir-fact-lbl">Академия тату</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ОТЗЫВЫ ═══════════ -->
+<section class="section reviews-bg" id="reviews">
+  <div class="section-inner">
+    <p class="sec-label">Клиенты</p>
+    <h2 class="sec-title">Отзывы<br><em>о нас</em></h2>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Долго выбирала студию, остановилась на Soprano — и не пожалела. Мастер очень внимательно отнёсся к моей идее, эскиз доработали вместе. Результат превзошёл ожидания!»</p>
+        <div class="review-author">
+          <div class="review-avatar">А</div>
+          <div>
+            <div class="review-name">Анастасия</div>
+            <div class="review-date">Клиент студии</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Делал татуировку у Антона. Реализм просто невероятный — фото отправлял друзьям, никто не верил что это тату. Чистота, стерильность, профессионализм на высшем уровне.»</p>
+        <div class="review-author">
+          <div class="review-avatar">М</div>
+          <div>
+            <div class="review-name">Михаил</div>
+            <div class="review-date">Клиент студии</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">«Проходила обучение в академии Soprano. За короткое время получила все необходимые знания и навыки. Антон лично курировал каждый этап обучения. Рекомендую всем!»</p>
+        <div class="review-author">
+          <div class="review-avatar">Е</div>
+          <div>
+            <div class="review-name">Екатерина</div>
+            <div class="review-date">Ученица академии</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ЗАПИСЬ ═══════════ -->
+<section class="section" id="contact" style="background:#000;padding-top:80px;padding-bottom:80px;">
+  <div class="section-inner">
+    <p class="sec-label">Запись</p>
+    <h2 class="sec-title" style="margin-bottom:40px;">Запишись<br><em>к нам</em></h2>
+
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <h2 class="sec-title" style="font-size:clamp(28px,3.5vw,48px);margin-bottom:16px;">
+          Начни своё<br><em>путешествие</em>
+        </h2>
+        <p class="contact-tagline">
+          Запишись на бесплатную консультацию и получи скидку <strong style="color:var(--gold-light);">1000 ₽</strong> на любую услугу студии.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Телефон</div>
+              <div class="contact-item-val"><a href="tel:+79513813077">+7 951 381-30-77</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Адрес</div>
+              <div class="contact-item-val">Кирова 113/2 (IQ Aparts)<br>16 этаж, офис 1604</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Мессенджеры</div>
+              <div class="contact-item-val">
+                <a href="https://t.me/Soprano2024" target="_blank">Telegram: @Soprano2024</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 class="form-title">Записаться</h3>
+        <p class="form-sub">Заполни форму — мы свяжемся в течение часа</p>
+
+        <form onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Телефон" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <select>
+              <option value="" disabled selected>Выберите услугу</option>
+              <option>Татуировка</option>
+              <option>Пирсинг</option>
+              <option>Обучение тату</option>
+              <option>Коворкинг</option>
+              <option>Консультация</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Расскажите об идее татуировки или задайте вопрос..."></textarea>
+          </div>
+          <div class="form-group">
+            <select>
+              <option value="" disabled selected>Удобный способ связи</option>
+              <option>Telegram</option>
+              <option>Звонок</option>
+              <option>ВКонтакте</option>
+              <option>Instagram</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-gold form-submit">
+            <span>Отправить заявку</span>
+            <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M10 4l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности и обработкой персональных данных.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section faq-bg" id="faq">
+  <div class="section-inner">
+    <p class="sec-label">Вопросы</p>
+    <h2 class="sec-title">Часто<br><em>спрашивают</em></h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Сколько стоит татуировка?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Цена зависит от профессионализма мастера, размера и сложности эскиза. А также на стоимость влияет место нанесения и стиль. Запишитесь на бесплатную консультацию — мастер рассчитает точную стоимость вашего проекта.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Какие стили татуировок вы делаете?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Cover up, Freehand, Белая татуировка, Биомеханика, Блекворк, Графика, Дотворк, Акварель, Ньюскул, Олдскул, Орнаментал, Полинезия, Реализм, Треш-полька, Чикано, Япония. Если ваш стиль не указан — уточните на консультации.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Как подготовиться к татуировке?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            1. Выберите мастера по стилистике и его работам<br>
+            2. Запишитесь на бесплатную консультацию для обсуждения проекта<br>
+            3. Мастер подготовит эскиз — онлайн-одобрение клиента<br>
+            4. Запись на «примерку» эскиза, согласование стоимости и запись на сеанс<br>
+            5. Ура, сеанс!
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Как ухаживать за татуировкой?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <strong style="color:var(--gold-light);">Правило 1:</strong> Пленку снять через 6 часов, промыть Хлоргексидином, нанести заживляющий крем. Не заклеивать пластырями — тату должна дышать.<br><br>
+            <strong style="color:var(--gold-light);">Правило 2:</strong> Промывать тёплой водой с мылом минимум 2 раза в день (без губки).<br><br>
+            <strong style="color:var(--gold-light);">Правило 3:</strong> После промывки наносить заживляющую мазь (Tattoo PHARMA) тонким слоем. Не обрабатывать спиртом.<br><br>
+            <strong style="color:var(--gold-light);">Правило 4:</strong> Не распаривать, не посещать бассейн, сауну, баню. Избегать солнца и физических нагрузок. Не чесать! Через 2 недели татуировка полностью заживёт.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo logo-wrap" style="margin-bottom:16px;">
+        <div class="logo-mark" style="width:38px;height:38px;font-size:15px;">S</div>
+        <div class="logo-text-wrap">
+          <span class="logo-main">Soprano</span>
+          <span class="logo-sub">Tattoo Studio Academy</span>
+        </div>
+      </div>
+      <p class="footer-desc">Профессиональная тату студия и академия в Новосибирске. Делаем татуировки, которые становятся частью вас.</p>
+      <div class="footer-soc">
+        <a href="https://t.me/Soprano2024" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.81-1.68 7.92c-.12.56-.45.7-.9.43l-2.5-1.84-1.2 1.16c-.14.13-.25.24-.5.24l.18-2.54 4.6-4.16c.2-.18-.04-.28-.31-.1L7.58 14.33l-2.47-.77c-.54-.17-.55-.54.11-.8l9.65-3.72c.45-.17.84.11.69.77z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/soprano.tattoo.nsk" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://vk.ru/soprano_tattoo" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.87 13.5h-1.47c-.56 0-.73-.45-1.73-1.45-.87-.85-1.25-.97-1.46-.97-.3 0-.38.08-.38.47v1.32c0 .34-.11.54-1 .54-1.47 0-3.1-.89-4.25-2.55-1.73-2.43-2.2-4.24-2.2-4.62 0-.2.08-.4.47-.4h1.47c.35 0 .48.16.62.55.68 1.95 1.82 3.66 2.29 3.66.18 0 .26-.08.26-.53V9.86c-.06-1-.57-1.08-.57-1.43 0-.17.14-.34.36-.34h2.32c.3 0 .4.16.4.5v2.7c0 .3.13.4.21.4.18 0 .33-.1.66-.43 1.02-1.14 1.75-2.9 1.75-2.9.1-.2.26-.38.6-.38h1.47c.44 0 .54.23.44.53-.18.84-1.95 3.33-1.95 3.33-.15.25-.2.36 0 .63.15.2.64.62.97 1 .6.65 1.06 1.2 1.18 1.58.13.38-.07.57-.46.57z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Услуги</h4>
+      <a href="#services">Татуировка</a>
+      <a href="#services">Пирсинг</a>
+      <a href="#services">Обучение тату</a>
+      <a href="#services">Коворкинг</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Студия</h4>
+      <a href="#about">О нас</a>
+      <a href="#masters">Мастера</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#faq">FAQ</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <p class="footer-addr">г. Новосибирск<br>ул. Кирова 113/2<br>IQ Aparts, 16 этаж<br>Офис 1604</p>
+      <a href="tel:+79513813077">+7 951 381-30-77</a>
+      <a href="https://t.me/Soprano2024" target="_blank">Telegram</a>
+    </div>
+  </div>
+
+  <div class="footer-bot">
+    <span class="footer-copy">© 2024 Soprano Tattoo Studio Academy · Новосибирск</span>
+    <div class="footer-gold-line"></div>
+    <span class="footer-copy">Все права защищены</span>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('mobNav');
+  const btn=document.getElementById('burger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('active');
+}
+function closeMenu(){
+  document.getElementById('mobNav').classList.remove('open');
+  document.getElementById('burger').classList.remove('active');
+}
+document.addEventListener('click',function(e){
+  const nav=document.getElementById('mobNav');
+  const btn=document.getElementById('burger');
+  if(!nav.contains(e.target)&&!btn.contains(e.target))closeMenu();
+});
+
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>el.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+function submitForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.form-submit');
+  btn.innerHTML='<span>Отправлено! Свяжемся скоро ✓</span>';
+  btn.style.background='linear-gradient(135deg,#2a5a2a,#3a7a3a)';
+  setTimeout(()=>{
+    btn.innerHTML='<span>Отправить заявку</span>';
+    btn.style.background='';
+    e.target.reset();
+  },3000);
+}
+
+// Scroll animations
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity='1';
+      entry.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('.who-col,.svc-card,.master-card,.review-card,.stat-item,.dir-content,.dir-photo-col').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(28px)';
+  el.style.transition='opacity 0.65s ease, transform 0.65s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
